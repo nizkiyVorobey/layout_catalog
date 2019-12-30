@@ -4,15 +4,15 @@ body {
   font-family: "Roboto", sans-serif; }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   height: 60px;
   padding-right: 50px;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -68,16 +68,21 @@ body {
     background-color: #00acdc; }
 
 .main-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 50px 48px;
+  grid-template-columns: repeat(auto-fill, 200px);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto; }
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px; }
 
 .card {
   width: 200px;
@@ -87,7 +92,7 @@ body {
   border-radius: 5px;
   padding: 15px;
   padding-left: 14px;
-  margin: 0 24px 50px; }
+  margin: 0 50px; }
   .card__img {
     width: 160px;
     height: 134px;
@@ -145,9 +150,7 @@ body {
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
-    margin: 0;
-    -ms-flex-item-align: start;
-        align-self: flex-start; }
+    margin: 0; }
 
 .card:hover {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
@@ -164,11 +167,11 @@ body {
     height: 15px;
     background: url("../images/star.svg");
     background-repeat: no-repeat;
-    border-radius: 0.5px;
-    margin-right: 4px; }
+    border-radius: 0.5px; }
   .card-stars__item:nth-child(-n+4) {
     background: url("../images/star-active.svg");
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    margin-right: 4px; }
 
 .card-link {
   width: 170px;
@@ -202,10 +205,10 @@ body {
 @media screen and (max-width: 950px) {
   .header {
     height: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    grid-template-columns: 1fr 1fr;
     padding: 15px 0 20px; }
+  .navigation {
+    justify-self: flex-start; }
   .navigation__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
